@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода в Москве</title>
+</head>
+<body>
+    <header>
+        <h1>Погода в Москве</h1>
+    </header>
+
+    <main>
+        <div id="weather-container">
+            <!-- Шаблон карточки дня -->
+            <article class="weather-card">
+                <div class="card-date" id="date-display"></div>
+                <div class="card-condition">
+                    <span id="condition-display"></span>
+                    <img id="icon-display" src="" alt="Icon">
+                </div>
+                <div class="card-temp" id="temp-display"></div>
+            </article>
+        </div>
+
+        <div id="error-message"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Погодный сервис</p>
+    </footer>
+</body>
+</html>

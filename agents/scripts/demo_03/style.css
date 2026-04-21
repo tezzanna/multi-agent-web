@@ -1,0 +1,137 @@
+/* Основной контейнер */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* Контейнер текущей погоды */
+#current-weather {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #6dd5fa 0%, #2980b9 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-align: center;
+}
+
+#current-weather h2 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#current-weather .temp {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin: 10px 0;
+    line-height: 1;
+}
+
+#current-weather .description {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    opacity: 0.9;
+}
+
+/* Список прогноза */
+#forecast-list {
+    max-width: 600px;
+    margin: 30px auto 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 0 15px;
+}
+
+/* Элемент списка прогноза */
+.forecast-item {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.forecast-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-item .day {
+    display: block;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.forecast-item .icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.forecast-item .temp-range {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.forecast-item .temp-low {
+    color: #888;
+    margin-left: 5px;
+}
+
+/* Адаптивная верстка */
+@media (max-width: 768px) {
+    #current-weather {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    #current-weather h2 {
+        font-size: 1.5rem;
+    }
+
+    #current-weather .temp {
+        font-size: 3.5rem;
+    }
+
+    #forecast-list {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+        margin: 20px 15px 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    #current-weather .temp {
+        font-size: 3rem;
+    }
+    
+    #forecast-list {
+        grid-template-columns: 1fr; /* Одна колонка на очень маленьких экранах */
+    }
+    
+    .forecast-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+    
+    .forecast-item .icon {
+        margin: 0;
+    }
+    
+    .forecast-item .temp-range {
+        margin-left: auto;
+    }
+}

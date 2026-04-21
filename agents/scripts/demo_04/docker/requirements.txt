@@ -1,0 +1,6 @@
+langchain==0.3.17
+langchain-openai==0.2.14
+langgraph==0.2.69
+langgraph-supervisor==0.0.2
+python-dotenv==1.0.1
+jupyterlab==4.3.4

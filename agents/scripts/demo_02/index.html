@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Интерактивный дашборд продаж</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+  --color-bg:#f7f9fc;
+  --color-primary:#4a90e2;
+  --color-text:#333;
+  --color-card:#fff;
+  --color-border:#e0e0e0;
+  --color-accent:#d32f2f;
+  --font-family:Arial,Helvetica,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-family);background:var(--color-bg);color:var(--color-text);line-height:1.6;}
+header{background:var(--color-primary);color:#fff;padding:1rem;text-align:center;}
+main{max-width:1200px;margin:2rem auto;padding:0 1rem;}
+.card{background:var(--color-card);padding:1rem;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,.1);margin-bottom:1.5rem;}
+#filters label{margin-right:.5rem;}
+#filters input{margin-right:1rem;padding:.2rem;}
+#filters button{padding:.4rem 1rem;background:var(--color-primary);color:#fff;border:none;border-radius:4px;cursor:pointer;}
+#filters button:hover{background:#357ab8;}
+#chartContainer{height:400px;}
+#salesTable{width:100%;border-collapse:collapse;margin-top:1rem;}
+#salesTable th,#salesTable td{border:1px solid var(--color-border);padding:.8rem;text-align:left;}
+#salesTable th{background:#fafafa;}
+#salesTable tbody tr:nth-child(even){background:#f5f5f5;}
+#pagination{display:flex;justify-content:center;align-items:center;margin-top:1rem;}
+#pagination button{padding:.4rem 1rem;margin:0 .5rem;background:var(--color-primary);color:#fff;border:none;border-radius:4px;cursor:pointer;}
+#pagination button:hover{background:#357ab8;}
+#pageInfo{margin:0 1rem;}
+@media(max-width:768px){
+  #chartContainer{height:250px;}
+  #filters{flex-direction:column;}
+  #filters label{margin-bottom:.3rem;}
+  #filters input{margin-bottom:.5rem;}
+}
+</style>
+</head>
+<body>
+<header id="header"><h1>Дашборд продаж</h1></header>
+<main id="main">
+<div id="filters" class="card">
+<label for="dateFrom">Дата начала:</label>
+<input type="date" id="dateFrom" name="dateFrom">
+<label for="dateTo">Дата окончания:</label>
+<input type="date" id="dateTo" name="dateTo">
+<label for="productFilter">Товар:</label>
+<input type="text" id="productFilter" placeholder="Введите название">
+<label for="customerFilter">Клиент:</label>
+<input type="text" id="customerFilter" placeholder="Введите имя">
+<button id="applyFilters">Фильтровать</button>
+</div>
+<div id="chartContainer" class="card">
+<canvas id="mainChart"></canvas>
+</div>
+<div id="tableContainer" class="card">
+<table id="salesTable">
+<thead>
+<tr>
+<th>Дата</th>
+<th>Товар</th>
+<th>Клиент</th>
+<th>Кол-во</th>
+<th>Выручка</th>
+</tr>
+</thead>
+<tbody>
+<!-- Данные заполняются скриптом -->
+</tbody>
+</table>
+<div id="pagination" class="pagination">
+<button id="prevPage">← Предыдущая</button>
+<span id="pageInfo">Страница 1 из 10</span>
+<button id="nextPage">Следующая →</button>
+</div>
+</div>
+</main>
+<footer id="footer"><p>&copy; 2026</p></footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.3/dist/chart.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

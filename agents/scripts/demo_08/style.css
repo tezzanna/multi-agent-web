@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+#app {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    box-sizing: border-box;
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+#app:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Текущая погода */
+#current-weather {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#current-weather .temperature {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #2a5298;
+    line-height: 1;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+#current-weather .condition {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+#current-weather .location {
+    font-size: 1rem;
+    color: #95a5a6;
+    margin-bottom: 5px;
+}
+
+/* Прогноз */
+#forecast-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.forecast-card {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: background-color 0.2s;
+}
+
+.forecast-card:hover {
+    background-color: #eef2f7;
+}
+
+.forecast-card .day {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 5px;
+}
+
+.forecast-card .temp {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2a5298;
+}
+
+.forecast-card .min-max {
+    font-size: 0.75rem;
+    color: #95a5a6;
+    margin-top: 2px;
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media (max-width: 350px) {
+    #forecast-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #current-weather .temperature {
+        font-size: 3.5rem;
+    }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Продаж</title>
+    <style>
+        body{font-family:Arial, sans-serif; margin:20px;}
+        h1{font-size:1.8em;}
+        #controls{margin-bottom:10px;}
+        #chartContainer{width:100%; max-width:800px; margin:20px 0;}
+        table{border-collapse:collapse; width:100%;}
+        th,td{border:1px solid #ccc; padding:8px; text-align:left;}
+        th{background:#f0f0f0;}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <h1>Dashboard Продаж</h1>
+    <div id="chartContainer">
+        <canvas id="mainChart"></canvas>
+    </div>
+    <div id="tableContainer"></div>
+    <script src="script.js"></script>
+</body>
+</html>

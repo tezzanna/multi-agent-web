@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+/* Оформление карточки текущей погоды */
+#current-weather {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+#current-weather:hover {
+    transform: translateY(-5px);
+}
+
+#current-weather h1 {
+    margin: 0;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+#current-weather p {
+    margin: 10px 0;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.weather-icon {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+}
+
+/* Оформление списка прогноза */
+#forecast-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.forecast-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    color: #444;
+}
+
+.forecast-card .temp {
+    font-weight: bold;
+    color: #1e3c72;
+    font-size: 1.2rem;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+    body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        align-items: center;
+    }
+
+    #current-weather {
+        padding: 30px 20px;
+    }
+
+    #current-weather h1 {
+        font-size: 2rem;
+    }
+
+    #forecast-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 350px) {
+    #forecast-list {
+        grid-template-columns: 1fr;
+    }
+}

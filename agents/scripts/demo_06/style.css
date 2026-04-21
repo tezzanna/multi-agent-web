@@ -1,0 +1,114 @@
+:root {
+    --primary-color: #007bff;
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-secondary: #666666;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Current Weather Card */
+#current-weather {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#current-weather h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+#current-weather .weather-icon {
+    width: 100px;
+    height: 100px;
+    margin: 15px auto;
+    object-fit: contain;
+}
+
+#current-weather p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+}
+
+/* Forecast Container */
+#forecast-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.forecast-card {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: 12px;
+    width: 120px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px);
+}
+
+.forecast-card .day-name {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-main);
+    text-transform: capitalize;
+}
+
+.forecast-card .day-icon {
+    width: 40px;
+    height: 40px;
+    margin: 5px 0;
+}
+
+.forecast-card .temp-range {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #current-weather {
+        padding: 20px;
+    }
+    
+    .forecast-card {
+        width: calc(33.333% - 10px);
+    }
+}
