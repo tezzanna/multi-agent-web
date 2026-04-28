@@ -24,17 +24,17 @@ from langchain_openai import ChatOpenAI
 import mlflow
 
 # ── MLflow ────────────────────────────────────────────────────────────────────
-os.environ["MLFLOW_TRACKING_USERNAME"] = os.getenv("MLFLOW_TRACKING_USERNAME", "atezhelnikova")
-os.environ["MLFLOW_TRACKING_PASSWORD"] = os.getenv("MLFLOW_TRACKING_PASSWORD", "8Zq2EP6H06Yw")
+os.environ["MLFLOW_TRACKING_USERNAME"] = os.getenv("MLFLOW_TRACKING_USERNAME", "")
+os.environ["MLFLOW_TRACKING_PASSWORD"] = os.getenv("MLFLOW_TRACKING_PASSWORD", "")
 
 mlflow.set_tracking_uri("https://mlflow.aicorex.tech")
 mlflow.set_registry_uri("https://mlflow.aicorex.tech")
 mlflow.set_workspace("multi-agent-web-development")
-mlflow.set_experiment("demo_06")
+mlflow.set_experiment("demo_02")
 mlflow.langchain.autolog()
 
 # ── Директории ────────────────────────────────────────────────────────────────
-OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "scripts/demo_06"))
+OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "scripts/demo_02"))
 DOCKER_DIR = OUTPUT_DIR / "docker"
 
 def init_dirs():
